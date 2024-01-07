@@ -1,0 +1,8 @@
+<?php
+    track_start();
+    track_platform(P_SIDE);
+    track_local(DIR_L, $details["north_label"], "2");
+    track_local(DIR_L, $details["north_label"], "2 5");
+    track_platform(P_SIDE);
+    track_end();
+?>

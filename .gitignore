@@ -1,0 +1,9 @@
+*.pdf
+mysql/diagrams/**
+mysql/feeds/**
+mysql/java/**
+mysql/pl/**
+php/data/dbconnection.php
+php/transit/img/**
+secrets/**
+setup.txt

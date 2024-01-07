@@ -1,0 +1,52 @@
+name: "transitprod"
+version: "3.9"
+services:
+    php:
+        image: php:8.3.0-apache-bookworm
+        container_name: transit-php
+        ports:
+            - "80:80"
+            - "443:443"
+        extra_hosts:
+            - "transit.davidmordigal.com:127.0.0.1"
+        depends_on:
+            - mysql
+        volumes:
+            - ./php/transit:/var/www/html
+            - ./php/data:/usr/transit/data
+            - /etc/letsencrypt:/etc/letsencrypt
+            - /etc/apache2/mods-enabled/rewrite.load:/etc/apache2/mods-enabled/rewrite.load
+            - /etc/apache2/mods-enabled/socache_shmcb.load:/etc/apache2/mods-enabled/socache_shmcb.load
+            - /etc/apache2/mods-enabled/ssl.conf:/etc/apache2/mods-enabled/ssl.conf
+            - /etc/apache2/mods-enabled/ssl.load:/etc/apache2/mods-enabled/ssl.load
+            - /etc/apache2/sites-available:/etc/apache2/sites-available
+            - /etc/apache2/sites-enabled:/etc/apache2/sites-enabled
+        secrets:
+            - mysql_pwd
+    mysql:
+        image: mysql:8.0.35-debian
+        container_name: transit-mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_pwd
+            MYSQL_DATABASE: mtanyct
+            MYSQL_USER: david
+            MYSQL_PASSWORD_FILE: /run/secrets/mysql_pwd
+        command:
+            --innodb-buffer-pool-size=2G
+            --innodb-buffer-pool-instances=8
+            --innodb-buffer-pool-chunk-size=256M
+        volumes:
+            - vol01:/var/lib/mysql
+            - ./mysql:/root/transit
+        secrets:
+            - mysql_root_pwd
+            - mysql_pwd
+volumes:
+    vol01:
+secrets:
+    mysql_root_pwd:
+        file: ./secrets/mysql_root_pwd.txt
+    mysql_pwd:
+        file: ./secrets/mysql_pwd.txt

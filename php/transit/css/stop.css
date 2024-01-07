@@ -1,0 +1,150 @@
+/* section headers */
+h2:not(:first-of-type) {
+    margin-top: 0.5em;
+}
+
+h2 {
+    border-bottom: 1px solid white;
+}
+
+/* embedded map */
+iframe {
+    width: 100%;
+    height: 500px;
+}
+
+/* accessibility icons */
+i.access {
+    border-radius: 5px;
+    padding: 0.05em;
+}
+
+i.access-full {
+    background: blue;
+    color: white;
+}
+
+i.access-part {
+    background: white;
+    color: blue;
+}
+
+/* subway station sign */
+.subway-box {
+    background: black;
+    max-width: auto;
+    height: auto;
+}
+
+.subway-box-header {
+    width: inherit;
+    border-bottom: 2px solid white;
+    padding-top: 1em;
+}
+
+.subway-box-name {
+    width: inherit;
+    font-size: 24pt;
+    font-weight: 500;
+    padding-left: 0.2em;
+}
+
+.subway-box-routes {
+    width: inherit;
+    padding-left: 0.75em;
+    padding-bottom: 0.5em;
+}
+
+/* bus stop sign */
+.bus-box {
+    background: white;
+    color: black;
+    max-width: auto;
+    height: auto;
+}
+
+.bus-box-header {
+    width: inherit;
+    background: black;
+    padding-top: 1em;
+}
+
+.bus-box-name {
+    width: inherit;
+    font-size: 36pt;
+    font-weight: 500;
+    padding-left: 0.2em;
+}
+
+.bus-box-routes {
+    width: inherit;
+    padding-left: 0.75em;
+    padding-bottom: 0.5em;
+}
+
+/* track layouts */
+div.platform {
+    border: 1px solid white;
+    text-align: center;
+    font-size: 14pt;
+    padding: 2em;
+}
+
+div.platform-unused {
+    color: gray;
+    font-style: italic;
+}
+
+div.platform-sign {
+    background: black;
+    padding-bottom: 0.25em;
+    font-size: 18pt;
+    font-weight: 500;
+    line-height: inherit;
+    vertical-align: baseline;
+}
+
+div.track-arrow {
+    font-size: 36pt;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+div.track-arrow-left {
+    text-align: left;
+}
+
+div.track-arrow-right {
+    text-align: right;
+}
+
+div.text-vc {
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+div.track-unused {
+    color: gray;
+    text-align: center;
+    font-size: 14pt;
+    padding: 2em;
+}
+
+div.level-separator {
+    background: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    letter-spacing: 1em;
+}
+
+div.border-dashed {
+    border: 1px dashed white;
+}
