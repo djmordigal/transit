@@ -172,7 +172,9 @@ EOD;
         echo <<< EOD
     <footer>
         Subway Route Symbols &reg; Metropolitan Transportation Authority. Used with permission.<br>
-        Designed &amp; Developed by <a href="https://davidmordigal.com/" style="text-decoration: underline;" target="_blank">David Mordigal</a> | Powered by Docker
+	Designed &amp; Developed by <a href="https://davidmordigal.com/" style="text-decoration: underline;" target="_blank">David Mordigal</a> |
+	Powered by <a href="https://docker.com" style="text-decoration: underline;" target="_blank">Docker</a> |
+	<a href="https://github.com/djmordigal/transit" style="text-decoration: underline;" target="_blank">View the source code</a>
     </footer>
     </body>
 </html>
